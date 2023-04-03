@@ -6,11 +6,11 @@ class Produto {
         this.valor = 0;
     }
     //Funções, ações que o projeto vai realizar
-    adicionar() {
+    salvar() {
         alert('Vamos adicionar um produto');
     }
 
-    excluir() {
+    cancelar() {
         alert('Este item será deletado')
     }
 }
