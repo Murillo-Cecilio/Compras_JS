@@ -3,13 +3,19 @@ class Produto {
     constructor() {
         this.id = 1;
         this.arrayProdutos = [];
+        this.editId = null;
     }
     //Funções, ações que o projeto vai realizar
     salvar() {
         let produto = this.lerDados();
 
         if (this.validaCampos(produto)) {
-            this.adicionar(produto);
+            if (this.editId == null) {
+                this.adicionar(produto);
+            } else {
+                this.atualizar(this.editId, produto)
+            }
+
         }
 
         this.listaTabela();
@@ -51,14 +57,29 @@ class Produto {
     }
 
     adicionar(produto) {
+        produto.preco = parseFloat(produto.preco)
         this.arrayProdutos.push(produto);
         this.id++;
     }
 
+    //comando para atualizar o cadastro, no lugar de adc um novo ID.
+    atualizar(id, produto) {
+        for(let i = 0; i < this.arrayProdutos.length; i++) {
+            if(this.arrayProdutos[i].id == id) {
+                this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
+                this.arrayProdutos[i].preco = produto.preco;
+            }
+        }
+    }
+
     //comando para editar item selecionado em ações
     editarTexto(dados) {
+        this.editId = dados.id;
+
         document.getElementById('produto').value = dados.nomeProduto;
         document.getElementById('preco').value = dados.preco;
+
+        document.getElementById('botao').innerText = 'Atualizar'
     }
 
     //Função para ler os campos e devolver para o salvar.
@@ -91,6 +112,9 @@ class Produto {
     cancelar() {
         document.getElementById('produto').value = '';
         document.getElementById('preco').value = '';
+
+        document.getElementById('botao').innerText = 'Salvar';
+        this.editId = null;
     }
 
     deletar(id) {

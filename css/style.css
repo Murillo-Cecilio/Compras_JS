@@ -27,7 +27,7 @@ main {
     border-radius: 5px;
 }
 
-#botao {
+#botao, #botao2 {
     margin-top: 12px;
     margin-right: 1em;
     padding: 3px;
@@ -39,6 +39,11 @@ main {
 }
 
 #botao:hover {
+    background-color: rgb(74, 20, 126);
+    transition: all ease 0.5ms;
+}
+
+#botao2:hover {
     background-color: rgb(74, 20, 126);
     transition: all ease 0.5ms;
 }
@@ -75,7 +80,7 @@ table th, td {
 }
 
 table td img {
-    width:22px;
+    width:25px;
 }
 
 .center {

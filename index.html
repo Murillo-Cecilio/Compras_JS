@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -34,11 +32,11 @@
 
             <div class="lineInput">
                 <label>Preço</label>
-                <input type="text" name="preco" id="preco" placeholder="Preço do produto">
+                <input type="number" name="preco" id="preco" placeholder="Preço do produto">
             </div>
 
             <button onclick="produto.salvar()" id="botao">Salvar</button>
-            <button onclick="produto.cancelar()" id="botao">Cancelar</button>
+            <button onclick="produto.cancelar()" id="botao2">Cancelar</button>
         </div>
 
         <div class="content">
@@ -55,7 +53,7 @@
             </table>
         </div>
     </main>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
