@@ -32,16 +32,21 @@
                 <input type="text" name="produto" id="produto" placeholder="Nome do produto">
             </div>
 
+            <div class="lineInput">
+                <label>Preço</label>
+                <input type="text" name="preco" id="preco" placeholder="Preço do produto">
+            </div>
+
             <button onclick="produto.salvar()" id="botao">Salvar</button>
             <button onclick="produto.cancelar()" id="botao">Cancelar</button>
         </div>
-        
+
         <div class="content">
             <table border="1">
                 <thead>
                     <th class="center">ID</th>
                     <th>Produto</th>
-                    <th>Valor</th>
+                    <th>Preço</th>
                     <th class="center">Ações</th>
                 </thead>
                 <tbody>
