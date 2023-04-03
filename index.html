@@ -8,6 +8,10 @@
     <title>Lista de compras ¯\_(ツ)_/¯</title>
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <script src="js/script.js"></script>
 </head>
 
@@ -22,8 +26,33 @@
         </div>
 
         <div class="card">
-            <button onclick="produto.adicionar()">Adicionar</button>
-            <button onclick="produto.excluir()">Deletar</button>
+
+            <div class="lineInput">
+                <label>Produto</label>
+                <input type="text" name="produto" id="produto" placeholder="Nome do produto">
+            </div>
+
+            <button onclick="produto.adicionar()" id="botao">Adicionar</button>
+            <button onclick="produto.excluir()" id="botao">Deletar</button>
+        </div>
+        
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Arroz</td>
+                        <td>50,00</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
