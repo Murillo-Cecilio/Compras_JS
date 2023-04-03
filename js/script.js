@@ -36,6 +36,7 @@ class Produto {
 
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/edit.png';
+            imgEdit.setAttribute("onclick", "produto.editarTexto(" + JSON.stringify(this.arrayProdutos[i]) + ")");
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.png';
@@ -52,6 +53,12 @@ class Produto {
     adicionar(produto) {
         this.arrayProdutos.push(produto);
         this.id++;
+    }
+
+    //comando para editar item selecionado em ações
+    editarTexto(dados) {
+        document.getElementById('produto').value = dados.nomeProduto;
+        document.getElementById('preco').value = dados.preco;
     }
 
     //Função para ler os campos e devolver para o salvar.
@@ -87,18 +94,18 @@ class Produto {
     }
 
     deletar(id) {
+        if (confirm('Deseja realmente deletar o produto ID ' + id)) {
+            let tbody = document.getElementById('tbody');
 
-        let tbody = document.getElementById('tbody');
-
-        for (let i = 0; i < this.arrayProdutos.length; i++) {
-            if (this.arrayProdutos[i].id == id) {
-                this.arrayProdutos.splice(i, 1);
-                tbody.deleteRow(i);// comando para deletar tabela de forma dinâmica
+            for (let i = 0; i < this.arrayProdutos.length; i++) {
+                if (this.arrayProdutos[i].id == id) {
+                    this.arrayProdutos.splice(i, 1);
+                    tbody.deleteRow(i);// comando para deletar tabela de forma dinâmica
+                }
             }
+            console.log(this.arrayProdutos);
         }
-        console.log(this.arrayProdutos);
     }
-
 }
 
 var produto = new Produto();
