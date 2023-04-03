@@ -13,6 +13,7 @@ class Produto {
         }
 
         this.listaTabela();
+        this.cancelar();
     }
 
     listaTabela() {
@@ -34,7 +35,14 @@ class Produto {
             td_id.classList.add('center');
 
             let imgEdit = document.createElement('img');
-            imgEdit.src = 'img/edit'
+            imgEdit.src = 'img/edit.png';
+
+            let imgDelete = document.createElement('img');
+            imgDelete.src = 'img/delete.png';
+
+            //<td><img></td>
+            td_acoes.appendChild(imgEdit);
+            td_acoes.appendChild(imgDelete);
 
         }
     }
@@ -72,7 +80,8 @@ class Produto {
     }
 
     cancelar() {
-
+        document.getElementById('produto').value = '';
+        document.getElementById('preco').value = '';
     }
 }
 
