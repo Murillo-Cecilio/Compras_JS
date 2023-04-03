@@ -13,7 +13,7 @@ class Produto {
         }
 
         this.listaTabela();
-        this.cancelar();
+        this.cancelar();//comando para apagar a caixa de produto e preços.
     }
 
     listaTabela() {
@@ -39,11 +39,13 @@ class Produto {
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.png';
+            imgDelete.setAttribute("onclick", "produto.deletar(" + this.arrayProdutos[i].id + ")");//atribuindo a img o comando via js.
 
             //<td><img></td>
             td_acoes.appendChild(imgEdit);
             td_acoes.appendChild(imgDelete);
 
+            console.log(this.arrayProdutos)
         }
     }
 
@@ -83,6 +85,20 @@ class Produto {
         document.getElementById('produto').value = '';
         document.getElementById('preco').value = '';
     }
+
+    deletar(id) {
+
+        let tbody = document.getElementById('tbody');
+
+        for (let i = 0; i < this.arrayProdutos.length; i++) {
+            if (this.arrayProdutos[i].id == id) {
+                this.arrayProdutos.splice(i, 1);
+                tbody.deleteRow(i);// comando para deletar tabela de forma dinâmica
+            }
+        }
+        console.log(this.arrayProdutos);
+    }
+
 }
 
 var produto = new Produto();
