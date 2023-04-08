@@ -27,7 +27,7 @@ main {
     border-radius: 5px;
 }
 
-#botao, #botao2 {
+#botao, #botao2,#botao3 {
     margin-top: 12px;
     margin-right: 1em;
     padding: 3px;
@@ -44,6 +44,11 @@ main {
 }
 
 #botao2:hover {
+    background-color: rgb(74, 20, 126);
+    transition: all ease 0.5ms;
+}
+
+#botao3:hover {
     background-color: rgb(74, 20, 126);
     transition: all ease 0.5ms;
 }
