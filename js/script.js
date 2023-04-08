@@ -131,5 +131,6 @@ class Produto {
         }
     }
 }
+const total = null
 
 var produto = new Produto();
