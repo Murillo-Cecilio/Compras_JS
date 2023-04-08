@@ -53,9 +53,13 @@ main {
     transition: all ease 0.5ms;
 }
 
-.lineInput {
+.lineInput, .resultado {
     display: grid;
     margin-bottom: 10px;
+}
+
+.resultado {
+    margin-top: 3rem;
 }
 
 input {
