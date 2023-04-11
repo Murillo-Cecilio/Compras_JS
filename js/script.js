@@ -84,6 +84,7 @@ atualizar(id, produto) {
         if (this.arrayProdutos[i].id == id) {
             this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
             this.arrayProdutos[i].preco = produto.preco;
+            this.caculoTotal()
         }
     }
 }
