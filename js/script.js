@@ -83,6 +83,7 @@ atualizar(id, produto) {
     for (let i = 0; i < this.arrayProdutos.length; i++) {
         if (this.arrayProdutos[i].id == id) {
             this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
+            produto.preco = parseFloat(produto.preco)
             this.arrayProdutos[i].preco = produto.preco;
             this.caculoTotal()
         }
