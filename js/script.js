@@ -91,12 +91,12 @@ atualizar(id, produto) {
 }
 
 //comando para editar item selecionado em ações
-editarTexto(dados) {
+editarTexto(dados, produto) {
     this.editId = dados.id;
 
     document.getElementById('produto').value = dados.nomeProduto;
     document.getElementById('preco').value = dados.preco;
-
+    produto.preco = parseFloat(produto.preco)
     document.getElementById('botao').innerText = 'Atualizar'
 }
 
